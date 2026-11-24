@@ -8,28 +8,49 @@
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
+      margin: 32px auto;
+      padding: 0 20px 40px;
       line-height: 1.65;
       color: #1f2328;
       background-color: #ffffff;
     }
+    .lang-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .lang-btn {
+      padding: 6px 14px;
+      border: 1px solid #d0d7de;
+      border-radius: 6px;
+      background: #f6f8fa;
+      color: #1f2328;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    .lang-btn.active {
+      background: #0969da;
+      color: #ffffff;
+      border-color: #0969da;
+    }
     h1 {
-      font-size: 28px;
+      font-size: 26px;
       border-bottom: 1px solid #d0d7de;
       padding-bottom: 12px;
       margin-bottom: 8px;
     }
     h2 {
-      font-size: 20px;
-      margin-top: 28px;
+      font-size: 19px;
+      margin-top: 26px;
       margin-bottom: 10px;
       color: #111;
     }
     .updated {
       color: #656d76;
       font-size: 14px;
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
     ul {
       padding-left: 22px;
@@ -44,71 +65,228 @@
     a:hover {
       text-decoration: underline;
     }
+    .lang-section {
+      display: none;
+    }
+    .lang-section.active {
+      display: block;
+    }
   </style>
 </head>
 <body>
 
-  <h1>Privacy Policy for CertShelf</h1>
-  <p class="updated"><strong>Last updated:</strong> November 24, 2026</p>
+  <div class="lang-bar">
+    <button class="lang-btn active" id="btn-en" onclick="setLang('en')">English</button>
+    <button class="lang-btn" id="btn-ru" onclick="setLang('ru')">Русский</button>
+    <button class="lang-btn" id="btn-de" onclick="setLang('de')">Deutsch</button>
+  </div>
 
-  <h2>1. Overview</h2>
-  <p>
-    <strong>CertShelf</strong> (package name: <code>com.certshelf.app</code>, referred to as "we", "our", or "the app") is developed by <strong>[Jevgenijs Pavluciks]</strong>. This Privacy Policy explains how your information is handled when you use the CertShelf mobile application.
-  </p>
+  <!-- ================= ENGLISH ================= -->
+  <div id="lang-en" class="lang-section active">
+    <h1>Privacy Policy for CertShelf</h1>
+    <p class="updated"><strong>Last updated:</strong> November 24, 2026</p>
 
-  <h2>2. Local Data Storage (No Backend Servers)</h2>
-  <p>
-    CertShelf is built to store your data locally on your device. We do not operate our own backend servers to collect, store, or synchronize your personal files, certificates, images, or notes in the cloud.
-  </p>
+    <h2>1. Overview</h2>
+    <p>
+      <strong>CertShelf</strong> (package name: <code>com.certshelf.app</code>, referred to as "we", "our", or "the app") is developed by <strong>[Jevgenijs Pavluciks]</strong>. This Privacy Policy explains how your information is handled when you use the CertShelf mobile application.
+    </p>
 
-  <h2>3. How Core Features Handle Data</h2>
-  <ul>
-    <li>
-      <strong>Document Scanning and Text Recognition (OCR):</strong> When you select an image, scan a document, or use text recognition inside CertShelf, processing happens locally on your device using on-device recognition tools (such as Google ML Kit). Your documents and extracted text are not uploaded to our servers.
-    </li>
-    <li>
-      <strong>Local Notifications and Reminders:</strong> CertShelf allows you to schedule local reminders on your device (for example, certificate expiration alerts). Notifications are generated and triggered locally using standard Android notification permissions.
-    </li>
-    <li>
-      <strong>Exporting and Sharing Files:</strong> When you export or share a document, certificate, or code from CertShelf, the content is passed to the system file picker or Android share sheet only upon your explicit action. Once shared with another app or external service, the handling of that file is governed by the recipient's own privacy policy.
-    </li>
-  </ul>
+    <h2>2. Local Data Storage (No Backend Servers)</h2>
+    <p>
+      CertShelf is built to store your data locally on your device. We do not operate our own backend servers to collect, store, or synchronize your personal files, certificates, images, or notes in the cloud.
+    </p>
 
-  <h2>4. Subscriptions and Payments</h2>
-  <p>
-    If you purchase a subscription or premium access inside CertShelf, payment transactions are processed directly by <strong>Google Play</strong> under Google's terms and privacy policies. We do not receive, process, or store your payment card details.
-  </p>
+    <h2>3. How Core Features Handle Data</h2>
+    <ul>
+      <li>
+        <strong>Document Scanning and Text Recognition (OCR):</strong> When you select an image, scan a document, or use text recognition inside CertShelf, processing happens locally on your device using on-device recognition tools (such as Google ML Kit). Your documents and extracted text are not uploaded to our servers.
+      </li>
+      <li>
+        <strong>Local Notifications and Reminders:</strong> CertShelf allows you to schedule local reminders on your device (for example, certificate expiration alerts). Notifications are generated and triggered locally using standard Android notification permissions.
+      </li>
+      <li>
+        <strong>Exporting and Sharing Files:</strong> When you export or share a document, certificate, or code from CertShelf, the content is passed to the system file picker or Android share sheet only upon your explicit action. Once shared with another app or external service, the handling of that file is governed by the recipient's own privacy policy.
+      </li>
+    </ul>
 
-  <h2>5. Third-Party Libraries and Platform Services</h2>
-  <p>
-    CertShelf uses standard Android platform APIs and third-party libraries (including Google ML Kit for on-device text recognition and Google Play Billing) to provide app functionality. While we do not collect your personal files on our own servers, underlying platform SDKs (such as Google Play services or ML Kit) may collect basic technical diagnostics, app version data, or installation identifiers in accordance with <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>.
-  </p>
+    <h2>4. Subscriptions and Payments</h2>
+    <p>
+      If you purchase a subscription or premium access inside CertShelf, payment transactions are processed directly by <strong>Google Play</strong> under Google's terms and privacy policies. We do not receive, process, or store your payment card details.
+    </p>
 
-  <h2>6. Data Security and Retention</h2>
-  <ul>
-    <li>Your records and files remain on your device until you delete them or clear the app's data.</li>
-    <li>Device-level protection (such as screen lock and Android storage encryption) depends on your device settings.</li>
-    <li>Because CertShelf does not store copies of your data on cloud servers, we recommend keeping personal backups of important documents.</li>
-  </ul>
+    <h2>5. Third-Party Libraries and Platform Services</h2>
+    <p>
+      CertShelf uses standard Android platform APIs and third-party libraries (including Google ML Kit for on-device text recognition and Google Play Billing) to provide app functionality. While we do not collect your personal files on our own servers, underlying platform SDKs (such as Google Play services or ML Kit) may collect basic technical diagnostics, app version data, or installation identifiers in accordance with <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>.
+    </p>
 
-  <h2>7. How to Delete Your Data</h2>
-  <p>
-    You can delete individual records directly within the app, remove any files you manually exported, or wipe all local app data at any time via <strong>Android Settings &rarr; Apps &rarr; CertShelf &rarr; Storage &rarr; Clear data</strong>, or by uninstalling <strong>CertShelf</strong> from your device.
-  </p>
+    <h2>6. Data Security and Retention</h2>
+    <ul>
+      <li>Your records and files remain on your device until you delete them or clear the app's data.</li>
+      <li>Device-level protection (such as screen lock and Android storage encryption) depends on your device settings.</li>
+      <li>Because CertShelf does not store copies of your data on cloud servers, we recommend keeping personal backups of important documents.</li>
+    </ul>
 
-  <h2>8. Changes to This Privacy Policy</h2>
-  <p>
-    We may update this Privacy Policy from time to time if app features or legal requirements change. Any updates will be posted on this page with an updated "Last updated" date.
-  </p>
+    <h2>7. How to Delete Your Data</h2>
+    <p>
+      You can delete individual records directly within the app, remove any files you manually exported, or wipe all local app data at any time via <strong>Android Settings &rarr; Apps &rarr; CertShelf &rarr; Storage &rarr; Clear data</strong>, or by uninstalling <strong>CertShelf</strong> from your device.
+    </p>
 
-  <h2>9. Contact Us</h2>
-  <p>
-    If you have any questions regarding this Privacy Policy or how data is handled in CertShelf, please contact us:
-  </p>
-  <ul>
-    <li><strong>Developer:</strong> [Jevgenijs Pavluciks]</li>
-    <li><strong>Email:</strong> [certshelf@gmail.com]</li>
-  </ul>
+    <h2>8. Changes to This Privacy Policy</h2>
+    <p>
+      We may update this Privacy Policy from time to time if app features or legal requirements change. Any updates will be posted on this page with an updated "Last updated" date.
+    </p>
+
+    <h2>9. Contact Us</h2>
+    <p>If you have any questions regarding this Privacy Policy or how data is handled in CertShelf, please contact us:</p>
+    <ul>
+      <li><strong>Developer:</strong> [Jevgenijs Pavluciks]</li>
+      <li><strong>Email:</strong> [CertShelf@gmail.com]</li>
+    </ul>
+  </div>
+
+  <!-- ================= РУССКИЙ ================= -->
+  <div id="lang-ru" class="lang-section">
+    <h1>Политика конфиденциальности CertShelf</h1>
+    <p class="updated"><strong>Последнее обновление:</strong> 24 ноября 2026 г.</p>
+
+    <h2>1. Общие положения</h2>
+    <p>
+      Приложение <strong>CertShelf</strong> (имя пакета: <code>com.certshelf.app</code>, далее — «мы», «наш» или «приложение») разработано <strong>[Jevgenijs Pavluciks]</strong>. Настоящая Политика конфиденциальности описывает, как обрабатываются и хранятся данные при использовании мобильного приложения CertShelf.
+    </p>
+
+    <h2>2. Локальное хранение данных (без облачных серверов)</h2>
+    <p>
+      CertShelf создано для локального хранения данных на вашем устройстве. Мы не используем собственные серверы для сбора, хранения или облачной синхронизации ваших личных файлов, сертификатов, изображений или заметок.
+    </p>
+
+    <h2>3. Как основные функции работают с данными</h2>
+    <ul>
+      <li>
+        <strong>Сканирование документов и распознавание текста (OCR):</strong> когда вы выбираете изображение, сканируете документ или запускаете распознавание текста в CertShelf, обработка выполняется локально на вашем устройстве с использованием локальных инструментов (таких как Google ML Kit). Ваши документы и распознанный текст не загружаются на наши серверы.
+      </li>
+      <li>
+        <strong>Локальные уведомления и напоминания:</strong> CertShelf позволяет планировать локальные напоминания на устройстве (например, уведомления об истечении срока действия сертификатов). Уведомления создаются и срабатывают локально с использованием стандартных разрешений Android.
+      </li>
+      <li>
+        <strong>Экспорт и отправка файлов (шаринг):</strong> при экспорте или отправке документа, сертификата или кода из CertShelf данные передаются в системный выбор файлов или меню «Поделиться» Android исключительно по вашему явному действию. После передачи файла в другое приложение или внешний сервис его дальнейшая обработка регулируется политикой конфиденциальности получателя.
+      </li>
+    </ul>
+
+    <h2>4. Подписки и платежи</h2>
+    <p>
+      При оформлении подписки или премиум-доступа в CertShelf обработка платежей осуществляется напрямую через <strong>Google Play</strong> в соответствии с правилами и политикой конфиденциальности Google. Мы не получаем, не обрабатываем и не храним данные ваших банковских карт.
+    </p>
+
+    <h2>5. Сторонние библиотеки и сервисы платформы</h2>
+    <p>
+      Для работы функций приложения CertShelf использует стандартные API платформы Android и сторонние библиотеки (включая Google ML Kit для локального распознавания текста и Google Play Billing). Хотя мы не собираем ваши личные файлы на собственных серверах, базовые SDK платформы (такие как сервисы Google Play или ML Kit) могут собирать техническую диагностику, сведения о версии приложения или идентификаторы установки в соответствии с <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Политикой конфиденциальности Google</a>.
+    </p>
+
+    <h2>6. Безопасность и сроки хранения данных</h2>
+    <ul>
+      <li>Ваши записи и файлы хранятся на устройстве до тех пор, пока вы сами не удалите их или не очистите данные приложения.</li>
+      <li>Защита на уровне устройства (блокировка экрана и шифрование хранилища Android) зависит от настроек вашего смартфона.</li>
+      <li>Поскольку CertShelf не хранит копии ваших данных в облаке, мы рекомендуем самостоятельно делать резервные копии важных документов.</li>
+    </ul>
+
+    <h2>7. Как удалить ваши данные</h2>
+    <p>
+      Вы можете удалять отдельные записи внутри приложения, удалять вручную экспортированные копии файлов, а также в любой момент полностью стереть все локальные данные приложения через <strong>Настройки Android &rarr; Приложения &rarr; CertShelf &rarr; Хранилище &rarr; Очистить данные</strong> или удалив приложение <strong>CertShelf</strong> с устройства.
+    </p>
+
+    <h2>8. Изменения в Политике конфиденциальности</h2>
+    <p>
+      Мы можем периодически обновлять настоящую Политику конфиденциальности при изменении функций приложения или требований законодательства. Актуальная версия всегда публикуется на этой странице с указанием даты последнего обновления.
+    </p>
+
+    <h2>9. Контактная информация</h2>
+    <p>Если у вас возникли вопросы относительно данной Политики конфиденциальности или обработки данных в CertShelf, свяжитесь с нами:</p>
+    <ul>
+      <li><strong>Разработчик:</strong> [Jevgenijs Pavluciks]</li>
+      <li><strong>Email:</strong> [CertShelf@gmail.com]</li>
+    </ul>
+  </div>
+
+  <!-- ================= DEUTSCH ================= -->
+  <div id="lang-de" class="lang-section">
+    <h1>Datenschutzerklärung für CertShelf</h1>
+    <p class="updated"><strong>Zuletzt aktualisiert:</strong> 24. November 2026</p>
+
+    <h2>1. Überblick</h2>
+    <p>
+      <strong>CertShelf</strong> (Paketname: <code>com.certshelf.app</code>, im Folgenden „wir“, „uns“ oder „die App“) wird von <strong>[Jevgenijs Pavluciks]</strong> entwickelt. Diese Datenschutzerklärung erläutert, wie Ihre Informationen bei der Nutzung der mobilen Anwendung CertShelf verarbeitet werden.
+    </p>
+
+    <h2>2. Lokale Datenspeicherung (keine Backend-Server)</h2>
+    <p>
+      CertShelf ist darauf ausgelegt, Ihre Daten lokal auf Ihrem Gerät zu speichern. Wir betreiben keine eigenen Backend-Server, um Ihre persönlichen Dateien, Zertifikate, Bilder oder Notizen in der Cloud zu erfassen, zu speichern oder zu synchronisieren.
+    </p>
+
+    <h2>3. Datenverarbeitung durch Hauptfunktionen</h2>
+    <ul>
+      <li>
+        <strong>Dokumentenscan und Texterkennung (OCR):</strong> Wenn Sie ein Bild auswählen, ein Dokument scannen oder die Texterkennung in CertShelf verwenden, erfolgt die Verarbeitung lokal auf Ihrem Gerät mithilfe geräteinterner Erkennungswerkzeuge (wie Google ML Kit). Ihre Dokumente und erkannten Texte werden nicht auf unsere Server hochgeladen.
+      </li>
+      <li>
+        <strong>Lokale Benachrichtigungen und Erinnerungen:</strong> Mit CertShelf können Sie lokale Erinnerungen auf Ihrem Gerät planen (z. B. Hinweise auf ablaufende Zertifikate). Benachrichtigungen werden lokal über die standardmäßigen Android-Benachrichtigungsberechtigungen erstellt und ausgelöst.
+      </li>
+      <li>
+        <strong>Exportieren und Teilen von Dateien:</strong> Wenn Sie ein Dokument, Zertifikat oder einen Code aus CertShelf exportieren oder teilen, werden die Inhalte ausschließlich auf Ihre ausdrückliche Aktion hin an die System-Dateiauswahl oder das Android-Teilen-Menü übergeben. Sobald eine Datei an eine andere App oder einen externen Dienst weitergegeben wurde, unterliegt deren Verarbeitung der Datenschutzerklärung des jeweiligen Empfängers.
+      </li>
+    </ul>
+
+    <h2>4. Abonnements und Zahlungen</h2>
+    <p>
+      Wenn Sie innerhalb von CertShelf ein Abonnement oder einen Premium-Zugang erwerben, werden die Zahlungsvorgänge direkt über <strong>Google Play</strong> gemäß den Nutzungsbedingungen und Datenschutzrichtlinien von Google abgewickelt. Wir erhalten, verarbeiten oder speichern keine vollständigen Zahlungskartendaten.
+    </p>
+
+    <h2>5. Bibliotheken von Drittanbietern und Plattformdienste</h2>
+    <p>
+      CertShelf nutzt standardmäßige Android-Plattform-APIs und Bibliotheken von Drittanbietern (einschließlich Google ML Kit für die lokale Texterkennung und Google Play Billing), um die App-Funktionen bereitzustellen. Während wir Ihre persönlichen Dateien nicht auf eigenen Servern erfassen, können zugrunde liegende Plattform-SDKs (wie Google Play-Dienste oder ML Kit) grundlegende technische Diagnosedaten, App-Versionsinformationen oder Installationskennungen gemäß der <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Datenschutzerklärung von Google</a> erheben.
+    </p>
+
+    <h2>6. Datensicherheit und Speicherdauer</h2>
+    <ul>
+      <li>Ihre Einträge und Dateien verbleiben auf Ihrem Gerät, bis Sie diese löschen oder die App-Daten bereinigen.</li>
+      <li>Der Schutz auf Geräteebene (wie Bildschirmsperre und Android-Speicherverschlüsselung) hängt von Ihren Geräteeinstellungen ab.</li>
+      <li>Da CertShelf keine Kopien Ihrer Daten auf Cloud-Servern speichert, empfehlen wir, eigene Sicherungskopien wichtiger Dokumente anzulegen.</li>
+    </ul>
+
+    <h2>7. So löschen Sie Ihre Daten</h2>
+    <p>
+      Sie können einzelne Einträge direkt in der App löschen, manuell exportierte Dateien entfernen oder jederzeit alle lokalen App-Daten über <strong>Android-Einstellungen &rarr; Apps &rarr; CertShelf &rarr; Speicher &rarr; Daten löschen</strong> bzw. durch Deinstallation von <strong>CertShelf</strong> vollständig entfernen.
+    </p>
+
+    <h2>8. Änderungen dieser Datenschutzerklärung</h2>
+    <p>
+      Wir können diese Datenschutzerklärung gelegentlich aktualisieren, wenn sich App-Funktionen oder gesetzliche Anforderungen ändern. Aktualisierte Fassungen werden auf dieser Seite mit einem geänderten Datum unter „Zuletzt aktualisiert“ veröffentlicht.
+    </p>
+
+    <h2>9. Kontakt</h2>
+    <p>Bei Fragen zu dieser Datenschutzerklärung oder zur Datenverarbeitung in CertShelf kontaktieren Sie uns bitte unter:</p>
+    <ul>
+      <li><strong>Entwickler:</strong> [Jevgenijs Pavluciks]</li>
+      <li><strong>E-Mail:</strong> [CertShelf@gmail.com]</li>
+    </ul>
+  </div>
+
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('.lang-section').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+      const target = document.getElementById('lang-' + lang) || document.getElementById('lang-en');
+      const activeBtn = document.getElementById('btn-' + lang) || document.getElementById('btn-en');
+      target.classList.add('active');
+      activeBtn.classList.add('active');
+      document.documentElement.lang = lang;
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const queryLang = params.get('lang');
+    if (queryLang && ['en', 'ru', 'de'].includes(queryLang)) {
+      setLang(queryLang);
+    }
+  </script>
 
 </body>
 </html>
